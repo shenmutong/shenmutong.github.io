@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>QJson_Wiki</title>
+<!-- 2015-02-10 Tue 17:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="System Administrator" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">QJson_Wiki</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. QJson 相关类</a></li>
+<li><a href="#sec-2">2. QJson 具体使用</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> QJson 相关类</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+  QJsonArray            封装 JSON 数组                                   
+QJsonDocument         读写 JSON 文档                                   
+QJsonObject           封装 JSON 对象                                   
+QJsonObject::iterator 用于遍历 QJsonObject 的 STL 风格的非 const 遍历器
+QJsonParseError       报告 JSON 处理过程中出现的错误                   
+QJsonValue            封装 JSON 值                                     
+</p>
+
+<p>
+QJsonArray.push<sub>back</sub>(const QJsonValue &amp;value);
+qjQ
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> QJson 具体使用</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+JSON(JavaScript Object Notation)是一种轻量级的数据交换格式。它基于JavaScript（Standard ECMA-262 3rd Edition - December 1999）的一个子集。 JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯（包括C、C++、C#、Java、JavaScript、Perl、Python等）。这些特性使JSON成为理想的数据交换语言。易于人阅读和编写，同时也易于机器解析和生成。
+</p>
+
+<p>
+常用的Json库
+JsonCpp
+    JsonCpp是一个C++用来处理JSON数据的开发包。
+    网址：<a href="http://jsoncpp.sourceforge.net/">http://jsoncpp.sourceforge.net/</a>.
+cJSON
+    cJSON是一个超轻巧，携带方便，单文件，简单的可以作为ANSI-C标准的JSON解析器。
+    网址：<a href="http://sourceforge.net/projects/cjson/">http://sourceforge.net/projects/cjson/</a>.
+QJson
+    QJson是一个基于Qt的开发包用来将JSON数据解析成QVariant对象，JSON的数组将被映射为QVariantList实例，而其他对象映射为QVariantMap实例。
+    网址：<a href="http://qjson.sourceforge.net/">http://qjson.sourceforge.net/</a>.
+</p>
+
+<p>
+关于Qt中对JSON的生成与解析，Qt5以前的版本，需要去进行单独下载、编译，才能使用。到了Qt5，提供了专门的QJsonDocument类来读取和写入JSON文档。
+</p>
+
+<p>
+Qt5中JSON的生成与解析
+QJsonDocument
+    QJsonDocument既可以从一个基于文本表示的UTF-8编码，又可以从Qt自己的二进制格式读取和写入这个文件。
+    JSON文档可以从它的基于文本的表示使用QJsonDocument::fromJson()转换为QJsonDocument，用.toJSON()将其转换回文字。解析器非常快速和高效，将JSON转换为二进制表示。
+QJsonObject
+    QJsonObject类用于封装JSON对象。
+    JSON对象是键值对，其中键是唯一的字符串，其值由QJsonValue代表。一个QJsonObject可以从QVariantMap转换/被转换。
+QJsonArray
+    QJsonArray类用于封装JSON数组。
+    一个JSON数组列表值。该列表可以通过从阵列插入和移除QJsonValue的操纵。一个QJsonArray可以从QVariantList转换为/被转换。
+</p>
+
+<p>
+QJsonDocument有效解析后的文档可以使用!iSNull()判断。使用isArray()和isObject()来判断是否包含一个数组或对象。文档中包含的数组或对象可以使用array()或object()进行检索，然后读取或操纵。
+</p>
+
+<p>
+示例
+QJsonObject
+（1）生成Json
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">QJsonObject</span> <span style="color: #F92672;">json</span>;
+json.insert(<span style="color: #E6DB74;">"name"</span>, QString(<span style="color: #E6DB74;">"Qt"</span>));
+json.insert(<span style="color: #E6DB74;">"version"</span>, 5);
+json.insert(<span style="color: #E6DB74;">"windows"</span>, <span style="color: #AE81FF;">true</span>);
+
+<span style="color: #66D9EF;">QJsonDocument</span> <span style="color: #F92672;">document</span>;
+document.setObject(json);
+<span style="color: #66D9EF;">QByteArray</span> <span style="color: #F92672;">byte_array</span> = document.toJson(<span style="color: #AE81FF;">QJsonDocument</span>::Compact);
+<span style="color: #66D9EF;">QString</span> <span style="color: #F92672; font-style: italic;">json_str</span>(byte_array);
+</pre>
+</div>
+
+<p>
+结果：
+json<sub>str：</sub>{"name": "Qt","version": 5,"windows": true}
+</p>
+
+<p>
+（2）解析Json
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">QJsonParseError</span> <span style="color: #F92672;">json_error</span>;
+<span style="color: #66D9EF;">QJsonDocument</span> <span style="color: #F92672;">parse_doucment</span> = <span style="color: #AE81FF;">QJsonDocument</span>::fromJson(byte_array, &amp;json_error); 
+<span style="color: #66D9EF;">if</span>(json_error.error == <span style="color: #AE81FF;">QJsonParseError</span>::NoError) 
+{  
+    <span style="color: #66D9EF;">if</span>(parse_doucment.isObject())  
+    {  
+        <span style="color: #66D9EF;">QJsonObject</span> <span style="color: #F92672;">obj</span> = parse_doucment.object(); 
+        <span style="color: #66D9EF;">if</span>(obj.contains(<span style="color: #E6DB74;">"name"</span>))  
+        {  
+           <span style="color: #66D9EF;">QJsonValue</span> <span style="color: #F92672;">name_value</span> = obj.take(<span style="color: #E6DB74;">"name"</span>);
+    <span style="color: #66D9EF;">if</span>(name_value.isString())
+    {
+        <span style="color: #66D9EF;">QString</span> <span style="color: #F92672;">name</span> = name_value.toString();
+    }
+} 
+<span style="color: #66D9EF;">if</span>(obj.contains(<span style="color: #E6DB74;">"version"</span>))  
+{  
+    <span style="color: #66D9EF;">QJsonValue</span> <span style="color: #F92672;">version_value</span> = obj.take(<span style="color: #E6DB74;">"version"</span>);
+    <span style="color: #66D9EF;">if</span>(version_value.isDouble())
+    {
+<span style="color: #66D9EF;">int</span> <span style="color: #F92672;">version</span> = version_value.toVariant().toInt();
+    }
+} 
+<span style="color: #66D9EF;">if</span>(obj.contains(<span style="color: #E6DB74;">"windows"</span>))
+{
+    <span style="color: #66D9EF;">QJsonValue</span> <span style="color: #F92672;">version_value</span> = obj.take(<span style="color: #E6DB74;">"windows"</span>);
+    <span style="color: #66D9EF;">if</span>(version_value.isBool())
+    {
+<span style="color: #66D9EF;">bool</span> <span style="color: #F92672;">flag</span> = version_value.toBool();
+    } 
+}
+    }  
+}
+</pre>
+</div>
+<p>
+结果：
+name：Qt
+version：5
+windows：true
+</p>
+
+<p>
+QJsonArray
+（1）生成Json
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">QJsonArray</span> <span style="color: #F92672;">json</span>;
+json.insert(0, QString(<span style="color: #E6DB74;">"Qt"</span>));
+json.insert(1, QString(<span style="color: #E6DB74;">"version"</span>));
+json.insert(2, <span style="color: #AE81FF;">true</span>);
+
+<span style="color: #66D9EF;">QJsonDocument</span> <span style="color: #F92672;">document</span>;
+document.setArray(json);
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: System Administrator</p>
+<p class="date">Created: 2015-02-10 Tue 17:10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

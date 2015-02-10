@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Qt_XML_Handle_Wiki</title>
+<!-- 2015-02-10 Tue 17:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="System Administrator" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Qt_XML_Handle_Wiki</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 使用方法</a>
+<ul>
+<li><a href="#sec-1-1">1.1. QT三种读取XML文档方法</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. QXmlStreamReader :</a></li>
+<li><a href="#sec-1-1-2">1.1.2. DOM :</a></li>
+<li><a href="#sec-1-1-3">1.1.3. SAX:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. Qt三种声称Qml方法:</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. QXmlStreamWriter</a></li>
+<li><a href="#sec-1-2-2">1.2.2. DOM</a></li>
+<li><a href="#sec-1-2-3">1.2.3. 手工</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. 使用方法</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 原文地址</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 使用方法</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> QT三种读取XML文档方法</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> QXmlStreamReader :</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+一种快速的基于流的方式访问良格式 XML 文档，特别适合于实现一次解析器（所谓“一次解析器”，可以理解成我们只需读取文档一次，然后像一个遍历器从头到尾一次性处理 XML 文档，期间不会有反复的情况，也就是不会读完第一个标签，然后读第二个，读完第二个又返回去读第一个，这是不允许的）；
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> DOM :</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+DOM（Document Object Model）：将整个 XML 文档读入内存，构建成一个树结构，允许程序在树结构上向前向后移动导航，这是与另外两种方式最大的区别，也就是允许实现多次解析器（对应于前面所说的一次解析器）。DOM 方式带来的问题是需要一次性将整个 XML 文档读入内存，因此会占用很大内存；
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> SAX:</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+SAX（Simple API for XML）：提供大量虚函数，以事件的形式处理 XML 文档。这种解析办法主要是由于历史原因提出的，为了解决 DOM 的内存占用提出的（在现代计算机上，这个一般已经不是问题了）。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Qt三种声称Qml方法:</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> QXmlStreamWriter</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+QXmlStreamWriter，与QXmlStreamReader相对应；
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> DOM</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+DOM 方式，首先在内存中生成 DOM 树，然后将 DOM树写入文件。不过，除非我们程序的数据结构中本来就维护着一个 DOM 树，否则，临时生成树再写入肯定比较麻烦；
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> 手工</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+纯手工生成 XML 文档，显然，这是最复杂的一种方式。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 使用方法</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+在 Qt4 中，这三种方式都位于 QtXml 模块中。Qt5 则将QXmlStreamReader/QXmlStreamWriter 移动到 QtCore 中，QtXml 则标记为“不再维护”，这已经充分表明了 Qt 的官方意向.
+使用QXmlStreamReader是 Qt 中最快最方便的读取 XML 的方法。因为QXmlStreamReader使用了递增式的解析器，适合于在整个 XML 文档中查找给定的标签、读入无法放入内存的大文件以及处理 XML 的自定义数据。
+每次QXmlStreamReader的readNext()函数调用，解析器都会读取下一个元素，按照下表中展示的类型进行处理。
+</p>
+<html class="no-js" lang="zh-CN">
+<table>
+<tbody>
+<tr>fg
+<td>类型</td>
+<td>示例</td>
+<td>有关函数</td>
+</tr>
+<tr>
+<td><code>StartDocument</code></td>
+<td>-</td>
+<td><code>documentVersion()</code>,<code>documentEncoding()</code>,<code>isStandaloneDocument()</code></td>
+</tr>
+<tr>
+<td><code>EndDocument</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>StartElement</code></td>
+<td>&lt;item&gt;</td>
+<td><code>namespaceUri()</code>,<code>name()</code>,<code>attributes()</code>,<code>namespaceDeclarations()</code></td>
+</tr>
+<tr>
+<td><code>EndElement</code></td>
+<td>&lt;/item&gt;</td>
+<td><code>namespaceUri()</code>,<code>name()</code></td>
+</tr>
+<tr>
+<td><code>Characters</code></td>
+<td>AT&amp;amp;T</td>
+<td><code>text()</code>,<code>isWhitespace()</code>,<code>isCDATA()</code></td>
+</tr>
+<tr>
+<td><code>Comment</code></td>
+<td>&lt;!&#8211; fix &#8211;&gt;</td>
+<td><code>text()</code></td>
+</tr>
+<tr>
+<td><code>DTD</code></td>
+<td>&lt;!DOCTYPE &#8230;&gt;</td>
+<td><code>text()</code>,<code>notationDeclarations()</code>,<code>entityDeclarations()</code>,<code>dtdName()</code>,<code>dtdPublicId()</code>,<code>dtdSystemId()</code></td>
+</tr>
+<tr>
+<td><code>EntityReference</code></td>
+<td>&amp;trade;</td>
+<td><code>name()</code>,<code>text()</code></td>
+</tr>
+<tr>
+<td><code>ProcessingInstruction</code></td>
+<td>&lt;?alert?&gt;</td>
+<td><code>processingInstructionTarget()</code>,<code>processingInstructionData()</code></td>
+</tr>
+<tr>
+<td><code>Invalid</code></td>
+<td>&gt;&amp;&lt;!</td>
+<td><code>error()</code>, <code>errorString()</code></td>
+</tr>
+</tbody>
+</table>
+<p>
+考虑如下 XML 片段：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-XML">&lt;doc&gt;
+    &lt;quote&gt;Einmal ist keinmal&lt;/quote&gt;
+&lt;/doc&gt;
+</pre>
+</div>
+<p>
+一次解析过后，我们通过readNext()的遍历可以获得如下信息
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">StartDocument</span>
+<span style="color: #F92672; font-style: italic;">StartElement</span> (<span style="color: #66D9EF;">name</span>() == <span style="color: #E6DB74;">"doc"</span>)
+StartElement (name() == <span style="color: #E6DB74;">"quote"</span>)
+Characters (text() == <span style="color: #E6DB74;">"Einmal ist keinmal"</span>)
+EndElement (name() == <span style="color: #E6DB74;">"quote"</span>)
+EndElement (name() == <span style="color: #E6DB74;">"doc"</span>)
+EndDocument
+</pre>
+</div>
+<p>
+通过readNext()函数的循环调用，我们可以使用isStartElement()、isCharacters()这样的函数检查当前读取的类型，当然也可以直接使用state()函数。
+</p>
+
+<p>
+下面我们看一个完整的例子。在这个例子中，我们读取一个 XML 文档，然后使用一个QTreeWidget显示出来。我们的 XML 文档如下：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-Html">&lt;bookindex&gt;
+    &lt;entry term="sidebearings"&gt;
+        &lt;page&gt;10&lt;/page&gt;
+        &lt;page&gt;34-35&lt;/page&gt;
+        &lt;page&gt;307-308&lt;/page&gt;
+    &lt;/entry&gt;
+    &lt;entry term="subtraction"&gt;
+        &lt;entry term="of pictures"&gt;
+            &lt;page&gt;115&lt;/page&gt;
+            &lt;page&gt;244&lt;/page&gt;
+        &lt;/entry&gt;
+        &lt;entry term="of vectors"&gt;
+            &lt;page&gt;9&lt;/page&gt;
+        &lt;/entry&gt;
+    &lt;/entry&gt;
+&lt;/bookindex&gt;
+</pre>
+</div>
+<p>
+首先来看头文件：
+#+BEG
+IN<sub>SRC</sub> C++
+class MainWindow : public QMainWindow
+{
+    Q<sub>OBJECT</sub>
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+</p>
+
+<p>
+    bool readFile(const QString &amp;fileName);
+private:
+    void readBookindexElement();
+    void readEntryElement(QTreeWidgetItem *parent);
+    void readPageElement(QTreeWidgetItem *parent);
+    void skipUnknownElement();
+</p>
+
+<p>
+    QTreeWidget *treeWidget;
+    QXmlStreamReader reader;
+};
+#+END<sub>SRC</sub>
+MainWindow显然就是我们的主窗口，其构造函数也没有什么好说的：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">MainWindow</span>(<span style="color: #66D9EF;">QWidget</span> *<span style="color: #F92672;">parent</span>) :
+    QMainWindow(parent)
+{
+    setWindowTitle(tr(<span style="color: #E6DB74;">"XML Reader"</span>));
+
+    treeWidget = <span style="color: #66D9EF;">new</span> <span style="color: #66D9EF;">QTreeWidget</span>(<span style="color: #66D9EF;">this</span>);
+    <span style="color: #66D9EF;">QStringList</span> <span style="color: #F92672;">headers</span>;
+    headers &lt;&lt; <span style="color: #E6DB74;">"Items"</span> &lt;&lt; <span style="color: #E6DB74;">"Pages"</span>;
+    treeWidget-&gt;setHeaderLabels(headers);
+    setCentralWidget(treeWidget);
+}
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #AE81FF;">MainWindow</span>::~<span style="color: #F92672; font-style: italic;">MainWindow</span>()
+{
+}
+</pre>
+</div>
+<p>
+/ 接下来看几个处理 XML 文档的函数，这正是我们关注的要点：/
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">bool</span> <span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">readFile</span>(<span style="color: #66D9EF;">const</span> <span style="color: #66D9EF;">QString</span> &amp;<span style="color: #F92672;">fileName</span>)
+{
+    <span style="color: #66D9EF;">QFile</span> <span style="color: #F92672;">file</span>(fileName);
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>file.open(<span style="color: #AE81FF;">QFile</span>::ReadOnly | <span style="color: #AE81FF;">QFile</span>::Text)) {
+        <span style="color: #AE81FF;">QMessageBox</span>::critical(<span style="color: #66D9EF;">this</span>, tr(<span style="color: #E6DB74;">"Error"</span>),
+                              tr(<span style="color: #E6DB74;">"Cannot read file %1"</span>).arg(fileName));
+        <span style="color: #66D9EF;">return</span> <span style="color: #AE81FF;">false</span>;
+    }
+    reader.setDevice(&amp;file);
+    <span style="color: #66D9EF;">while</span> (<span style="font-weight: bold;">!</span>reader.atEnd()) {
+        <span style="color: #66D9EF;">if</span> (reader.isStartElement()) {
+            <span style="color: #66D9EF;">if</span> (reader.name() == <span style="color: #E6DB74;">"bookindex"</span>) {
+                readBookindexElement();
+            } <span style="color: #66D9EF;">else</span> {
+                reader.raiseError(tr(<span style="color: #E6DB74;">"Not a valid book file"</span>));
+            }
+        } <span style="color: #66D9EF;">else</span> {
+            reader.readNext();
+        }
+    }
+    file.close();
+    <span style="color: #66D9EF;">if</span> (reader.hasError()) {
+        <span style="color: #AE81FF;">QMessageBox</span>::critical(<span style="color: #66D9EF;">this</span>, tr(<span style="color: #E6DB74;">"Error"</span>),
+                              tr(<span style="color: #E6DB74;">"Failed to parse file %1"</span>).arg(fileName));
+        <span style="color: #66D9EF;">return</span> <span style="color: #AE81FF;">false</span>;
+    } <span style="color: #66D9EF;">else</span> <span style="color: #66D9EF;">if</span> (file.error() != <span style="color: #AE81FF;">QFile</span>::NoError) {
+        <span style="color: #AE81FF;">QMessageBox</span>::critical(<span style="color: #66D9EF;">this</span>, tr(<span style="color: #E6DB74;">"Error"</span>),
+                              tr(<span style="color: #E6DB74;">"Cannot read file %1"</span>).arg(fileName));
+        <span style="color: #66D9EF;">return</span> <span style="color: #AE81FF;">false</span>;
+    }
+    <span style="color: #66D9EF;">return</span> <span style="color: #AE81FF;">true</span>;
+}
+</pre>
+</div>
+<p>
+readFile()函数
+用于打开给定文件。我们使用QFile打开文件，将其设置为QXmlStreamReader的设备。也就是说，此时QXmlStreamReader就可以从这个设备（QFile）中读取内容进行分析了。接下来便是一个 while 循环，只要没读到文件末尾，就要一直循环处理。首先判断是不是StartElement，如果是的话，再去处理 bookindex 标签。注意，因为我们的根标签就是 bookindex，如果读到的不是 bookindex，说明标签不对，就要发起一个错误（raiseError()）。如果不是StartElement（第一次进入循环的时候，由于没有事先调用readNext()，所以会进入这个分支），则调用readNext()。为什么这里要用 while 循环，XML 文档不是只有一个根标签吗？直接调用一次readNext()函数不就好了？这是因为，XML 文档在根标签之前还有别的内容，比如声明，比如 DTD，我们不能确定第一个readNext()之后就是根标签。正如我们提供的这个 XML 文档，首先是 声明，其次才是根标签。如果你说，第二个不就是根标签吗？但是 XML 文档还允许嵌入 DTD，还可以写注释，这就不确定数目了，所以为了通用起见，我们必须用 while 循环判断。处理完之后就可以关闭文件，如果有错误则显示错误。
+</p>
+
+<p>
+接下来看readBookindexElement()函数：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">void</span> <span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">readBookindexElement</span>()
+{
+    Q_ASSERT(reader.isStartElement() &amp;&amp; reader.name() == <span style="color: #E6DB74;">"bookindex"</span>);
+    reader.readNext();
+    <span style="color: #66D9EF;">while</span> (<span style="font-weight: bold;">!</span>reader.atEnd()) {
+        <span style="color: #66D9EF;">if</span> (reader.isEndElement()) {
+            reader.readNext();
+            <span style="color: #66D9EF;">break</span>;
+        }
+
+        <span style="color: #66D9EF;">if</span> (reader.isStartElement()) {
+            <span style="color: #66D9EF;">if</span> (reader.name() == <span style="color: #E6DB74;">"entry"</span>) {
+                readEntryElement(treeWidget-&gt;invisibleRootItem());
+            } <span style="color: #66D9EF;">else</span> {
+                skipUnknownElement();
+            }
+        } <span style="color: #66D9EF;">else</span> {
+            reader.readNext();
+        }
+    }
+}
+</pre>
+</div>
+<p>
+注意第一行我们加了一个断言。意思是，如果在进入函数的时候，reader 不是StartElement状态，或者说标签不是 bookindex，就认为出错。然后继续调用readNext()，获取下面的数据。后面还是 while 循环。如果是EndElement，退出，如果又是StartElement，说明是 entry 标签（注意我们的 XML 结构，bookindex 的子元素就是 entry），那么开始处理 entry，否则跳过。
+</p>
+
+<p>
+那么下面来看readEntryElement()函数：
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">void</span> <span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">readEntryElement</span>(<span style="color: #66D9EF;">QTreeWidgetItem</span> *<span style="color: #F92672;">parent</span>)
+{
+    <span style="color: #66D9EF;">QTreeWidgetItem</span> *<span style="color: #F92672;">item</span> = <span style="color: #66D9EF;">new</span> <span style="color: #66D9EF;">QTreeWidgetItem</span>(parent);
+    item-&gt;setText(0, reader.attributes().value(<span style="color: #E6DB74;">"term"</span>).toString());
+
+    reader.readNext();
+    <span style="color: #66D9EF;">while</span> (<span style="font-weight: bold;">!</span>reader.atEnd()) {
+        <span style="color: #66D9EF;">if</span> (reader.isEndElement()) {
+            reader.readNext();
+            <span style="color: #66D9EF;">break</span>;
+        }
+
+        <span style="color: #66D9EF;">if</span> (reader.isStartElement()) {
+            <span style="color: #66D9EF;">if</span> (reader.name() == <span style="color: #E6DB74;">"entry"</span>) {
+                readEntryElement(item);
+            } <span style="color: #66D9EF;">else</span> <span style="color: #66D9EF;">if</span> (reader.name() == <span style="color: #E6DB74;">"page"</span>) {
+                readPageElement(item);
+            } <span style="color: #66D9EF;">else</span> {
+                skipUnknownElement();
+            }
+        } <span style="color: #66D9EF;">else</span> {
+            reader.readNext();
+        }
+    }
+}
+</pre>
+</div>
+<p>
+这个函数接受一个QTreeWidgetItem指针，作为根节点。这个节点被当做这个 entry 标签在QTreeWidget中的根节点。我们设置其名字是 entry 的 term 属性的值。然后继续读取下一个数据。同样使用 while 循环，如果是EndElement就继续读取；如果是StartElement，则按需调用readEntryElement()或者readPageElement()。由于 entry 标签是可以嵌套的，所以这里有一个递归调用。如果既不是 entry 也不是 page，则跳过位置标签。
+</p>
+
+<p>
+然后是readPageElement()函数：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">void</span> <span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">readPageElement</span>(<span style="color: #66D9EF;">QTreeWidgetItem</span> *<span style="color: #F92672;">parent</span>)
+{
+    <span style="color: #66D9EF;">QString</span> <span style="color: #F92672;">page</span> = reader.readElementText();
+    <span style="color: #66D9EF;">if</span> (reader.isEndElement()) {
+        reader.readNext();
+    }
+
+    <span style="color: #66D9EF;">QString</span> <span style="color: #F92672;">allPages</span> = parent-&gt;text(1);
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>allPages.isEmpty()) {
+        allPages += <span style="color: #E6DB74;">", "</span>;
+    }
+    allPages += page;
+    parent-&gt;setText(1, allPages);
+}
+</pre>
+</div>
+<p>
+由于 page 是叶子节点，没有子节点，所以不需要使用 while 循环读取。我们只是遍历了 entry 下所有的 page 标签，将其拼接成合适的字符串。
+</p>
+
+<p>
+最后skipUnknownElement()函数：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">void</span> <span style="color: #AE81FF;">MainWindow</span>::<span style="color: #F92672; font-style: italic;">skipUnknownElement</span>()
+{
+    reader.readNext();
+    <span style="color: #66D9EF;">while</span> (<span style="font-weight: bold;">!</span>reader.atEnd()) {
+        <span style="color: #66D9EF;">if</span> (reader.isEndElement()) {
+            reader.readNext();
+            <span style="color: #66D9EF;">break</span>;
+        }
+
+        <span style="color: #66D9EF;">if</span> (reader.isStartElement()) {
+            skipUnknownElement();
+        } <span style="color: #66D9EF;">else</span> {
+            reader.readNext();
+        }
+    }
+}
+</pre>
+</div>
+<p>
+我们没办法确定到底要跳过多少位置标签，所以还是得用 while 循环读取，注意位置标签中所有子标签都是未知的，因此只要是StartElement，都直接跳过。
+</p>
+
+<p>
+好了，这是我们的全部程序。只要在main()函数中调用一下即可：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">MainWindow</span> <span style="color: #F92672;">w</span>;
+w.readFile(<span style="color: #E6DB74;">"books.xml"</span>);
+w.show();
+</pre>
+</div>
+<p>
+然后就能看到运行结果
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 原文地址</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="http://www.devbean.net/2013/07/qt-study-road-2-read-xml-with-stream/">http://www.devbean.net/2013/07/qt-study-road-2-read-xml-with-stream/</a></p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: System Administrator</p>
+<p class="date">Created: 2015-02-10 Tue 17:10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
