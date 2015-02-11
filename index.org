@@ -2,6 +2,5 @@
 #+AUTHOR:shen.mutong
 #+EMAIL: shenmutong@gmail.com
 * Wiki
-  [./Wiki/
-* blog
-
+  [[./Wiki/Wiki_Page.html][个人Wiki]]
+* Blog
