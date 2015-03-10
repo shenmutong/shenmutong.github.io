@@ -118,8 +118,7 @@ EndDocument
 </bookindex>
 #+END_SRC
 首先来看头文件：
-#+BEG
-IN_SRC C++
+#+BEGIN_SRC C++
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -154,7 +153,7 @@ MainWindow::MainWindow(QWidget *parent) :
 #+END_SRC
 #+BEGIN_SRC C++
 MainWindow::~MainWindow()
-{
+
 }
 #+END_SRC
 / 接下来看几个处理 XML 文档的函数，这正是我们关注的要点：/
