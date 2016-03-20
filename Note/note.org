@@ -1,0 +1,405 @@
+#+TAGS:{func(f) var(v) interface(i) tips(t) }
+* unity 学习
+** 学习框架
+*** 基本编程功底 c#
+*** Unity3D引擎使用
+*** 3D数学场景的运用
+** 水平衡量
+来源： 极客学院 走进unity3d 工程师世界
+*** UI效果呈现
+- 可替代性强
+初级工程师
+*** 逻辑数据管理
+场景中逻辑判断，数据间结构。
+初级工程师
+*** 游戏内容部署
+中级工程师内容，技能释放 任务换装等产品内容。
+*** 项目架构搭建
+高级开发人员 主程
+
+** Scripts
+*** Debug输出
+**** debug.log()
+**** Debug.logWaring()
+**** Debug.logError();
+
+*** time
+**** Awake()
+**** Start()
+*** Time.deltaTime
+*** [SerializeField]
+*** [HideInspector]
+*** 查找组件
+**** find
+**** getcompent 
+反射思想 单例模式
+*** transform
+负责物体在场景中 位置 转动角度 大小
+**** right up forward                                                           :var:
+坐标相对物体方向控制
+- right
+- up
+- forward
+**** TransFormPoint                                                             :func:
+自身坐标转换为世界坐标
+**** InverseTransfromPoint                                                      :func:
+相反 世界坐标转换为自身坐标
+**** TransFormDirection                                                         :func:
+自身方向向量
+**** InverseTransformDirection
+相反 同上
+
+* entity framework 使用学习
+** 
+* IOS Dev StandFord Learning Note
+** 3rd 应用MFC
+*** 数组和字典 在swift struct
+*** swift 重 struct 和类区别
+**** 类可以继承 结构体不可以
+**** 结构体传递值 类传递引用
+*** swift 不会真正的复制，在更改的时候才会复制。实际复制知识一种指针。
+*** swift 中使用下划线在传递中表示不在乎当前值。
+47.30
+*** tuple 类型
+*** 递归概念
+*** tag 60:47
+** 4th swift and foundation 
+*** dict
+*** array
+*** range 使用
+*** NSObject
+root object advance project in after
+*** NSNumber
+doubleValue inVlaue
+*** NSDate
+*** NSData
+ubtyped data memory 
+***  class struct enum 
+**** same
+property functions
+**** struct and class same place
+both have initializer()
+**** Diff
+***** inheritance(class)
+***** introspection and casting(class Only)
+***** copy(struct and enum) and reference
+***** mutationg 
+***** ARC 
+***** final cannot override
+***** static for signal 
+***** internal and external
+***** property
+***** lazy propert
+
+**** init closure 
+use lazy to instantiation 
+**** 
+
+**** page 29min37s
+**** 
+*** read document
+
+* IOS 开发
+** storyboard 使用
+
+*** basic using
+
+**** 标准空间使用和个性化
++ UITableViewController
++ UINavigation Controller
++ Button
++ label
++ textField
++ viewController
+  
+**** 控件交互
+@IBAction
+@IBAOutlet
+
+**** 界面交互
++ push
++ modal
++ custom
+***** uwind 
+id
+prepareForSegue
+
+**** MVC
+
+appdelegate
+dataSource
+viewController
+
+*** AUTOLAYOUT and constriaints
+
+*** Adaptive Laytou
+
+*** UIAppearnce Tutorial
+
+** Views and View Controllers
+*** UIScrollView
+*** UITableView
+
+*** UICollectionView
+
+*** UIVisualEffectView
+
+*** UITableView
+
+*** CALayer
+
+*** UISplitView
+
+*** ViewDebugging
+
+*** UICollectionView Custom layout
+
+** Graphics Animation APIs
+***  UIKit Dynamics Tutorial: Getting Started
+***  UIKitCore Image Tutorial: Getting Started
+***  UIKitScene Kit Tutorial: Getting Started
+***  UIKitCore Graphics Tutorial Part 1: Getting Started
+***  UIKitCOre Graphics Tutorial Part 2: Gradients and Contexts
+***  UIKitCore Graphics Tutorial Part 3: Patterns and Playgrounds
+***  UIKitUIKit Dynamics and Swift Tutorial: Tossing Views
+***  UIKitiOS Animation Tutorial: Getting Started
+***  UIKitiOS Animation Tutorial: Custom View Controller Presentation Transitions
+***  UIKitAsyncDisplayKit Tutorial: Node Hierarchies
+** Map Location APIs
+** Saving Data
+** Networking
+** WatchKit
+** DONE swift
+   CLOSED: [2015-09-10 Thu 17:04]
+   - State "DONE"       from ""           [2015-09-10 Thu 17:04]
+
+** STARTED OC
+   - State "TODO"       from "CANCELLED"  [2015-10-07 Wed 10:04]
+   - State "CANCELLED"  from ""           [2015-09-10 Thu 17:04]
+.h is a interface file or header file  .m include function code
+*** 特性
+**** in header file  interface 
+只能单继承
+@interface  className : fatherClass{}
+  NSString *ItemName //实例变量
+  }
+   //存取实例变量
+  -(void)setItemName:(NSString *)str;
+  -(NSString *)itemName;
+@end
+
+*** NSObject
+**** NSString 
+@"" 字符串
+**** NSLog
+控制台输出  参数不定 
+**** NSArray
++ objectAtIndex
++ count
+***** NSMtableArray
++ addObject:
++ insertObject:AtIndex:
++ removeObject:
+
+** UIKit API
+ 
+* EMACS 笔记
+* MinTTy
+* Qt    
+在qt多平台编译下，pro文件中在同意项目中， 在linux中 需要将全局变量所在cpp和。h SOURCES＋＝ 和HEADER＋＝ 中的顺序应该 放在使用使用变量类之前
+在win下正好相反
+
+* linux 
+
+** 安装参数
+*** apm acpi
+apm(Advanced Power Management)是早期的電源管理模組，acpi(Advanced Configuration and Power Interface)則是近期的電源管理模組。這兩者都是硬體本身就有支援的，但是筆記型電腦可能不是使用這些機制， 因此，當安裝時啟動這些機制將會造成一些錯誤，導致無法順利安裝。
+*** nofb
+nofb則是取消顯示卡上面的緩衝記憶體偵測。因為筆記型電腦的顯示卡常常是整合型的， Linux安裝程式本身可能就不是很能夠偵測到該顯示卡模組。此時加入nofb將可能使得你的安裝過程順利一些 
+
+* linux学习
+** 磁盘结构
+*** MBR分区
+*** GPT分区
+** linux 目录树结构
+** /dev 目录下各装置含义
+  | 裝置                | 裝置在Linux內的檔名                |
+  |---------------------+------------------------------------|
+  | SCSI/SATA/USB硬碟機 | /dev/sd[a-p]                       |
+  | USB快閃碟           | /dev/sd[a-p] (與SATA相同)          |
+  |---------------------+------------------------------------|
+  | VirtI/O界面         | /dev/vd[a-p] (用於虛擬機器內)      |
+  |---------------------+------------------------------------|
+  | 軟碟機              | /dev/fd[0-7]                       |
+  |---------------------+------------------------------------|
+  | 印表機              | /dev/lp[0-2] (25針印表機)          |
+  |                     | /dev/usb/lp[0-15] (USB 介面)       |
+  |---------------------+------------------------------------|
+  | 滑鼠                | /dev/input/mouse[0-15] (通用)      |
+  |                     | /dev/psaux (PS/2界面)              |
+  |                     | /dev/mouse (當前滑鼠)              |
+  |---------------------+------------------------------------|
+  | CDROM/DVDROM        | /dev/scd[0-1] (通用)               |
+  |                     | /dev/sr[0-1] (通用，CentOS 較常見) |
+  |                     | /dev/cdrom (當前 CDROM)            |
+  |---------------------+------------------------------------|
+  | 磁帶機              | /dev/ht0 (IDE 界面)                |
+  |                     | /dev/st0 (SATA/SCSI界面)           |
+  |                     | /dev/tape (當前磁帶)               |
+  |---------------------+------------------------------------|
+  | IDE硬碟機           | /dev/hd[a-d] (舊式系統才有)        |
+  |---------------------+------------------------------------|
+** linux 基础命令
+*** local
+使用语言
+*** date
+时间
+date +%Y/%m/%d
+date +%H:%M
+*** cal 
+计算
+*** man 
+作用：manual 操作说明
+manual 存放位置：/usr/share/man
+
+| 信号 | 内容                                           |
+|------+------------------------------------------------|
+|    1 | 使用者在shell环境中可以操作的指令或可执行档    |
+|    2 | 系统核心函数和工具                             |
+|    3 | 当用函数和函数库 （libc）                      |
+|    4 | 装置档案说明                                   |
+|    5 | 设定档或默写档案格式                           |
+|    6 | 游戏                                           |
+|    7 | 惯例与协定 linux档案系统 网络协定 ASCII code等 |
+|    8 | 管理员可用管理指令                             |
+|    9 | kernel 相关文件                                | 
+
+*** info 
+以目录结构保存程序使用说明。
+存放位置在 /usr/share/info/
+*** doc
+软件文档
+存放位置在/usr/share/doc/
+*** sync 
+
+
+*** bc
+** linix 基础变量
+*** LANG=en_US.urf8
+*** LC_ALL=en_US.urf8
+** 基础热键
+| 按键 | 含义                      |
+|------+---------------------------|
+| C-d  | EOF                       |
+| C-c  | init 发送中断当前程序信号 |
+| C-z  | 当前程序切入后台运行      |
+| Tab  | 自动补全                  |
+  
+
+* WPF 学习
+** Binding
+*** 属性
+**** UpdateSourceTrigeer 
+类型为 UdateSourceTrigger 
+取值为
+ - PropertyChanged
+ - LostFocus
+ - Explicit
+ - Default
+*** 组成
+
+
+* .net handle json file
+** 介绍
+ 开源类库newtonsoft.json.下载地址为：http://json.codeplex.com/
+已经在github上star 该项目。
+** 使用方式
+*** JsonReader & JsonWriter 读写
+**** JsonReader 
+#+BEGIN_SRC C++
+  string jsonText = 
+    @"{""input"" : ""value"", 
+     ""output"" :  ""result""}";
+  JsonReader reader = 
+     new JsonTextReader(
+             new StringReader(jsonText));
+
+  while (reader.Read())
+  {
+    Console.WriteLine(
+       reader.TokenType + "\t\t" + 
+       reader.ValueType + "\t\t" +
+       reader.Value);
+  }
+#+END_SRC
+result is :
+PropertyName System.String input
+String       System.String value
+
+**** JsonWriter 
+#+BEGIN_SRC C++
+  StringWriter sw = new StringWriter();
+  JsonWriter writer = new JsonTextWriter(sw);
+
+  writer.WriteStartObject();
+  writer.WritePropertyName("input");
+  writer.WriteValue("value");
+  writer.WritePropertyName("output");
+  writer.WriteValue("result");
+  writer.WriteEndObject();
+  writer.Flush();
+
+  string jsonText = 
+   sw.GetStringBuilder().ToString();
+  Console.WriteLine(jsonText);
+#+END_SRC
+*** JsonObject 读写
+#+BEGIN_SRC C++
+  JObject jo = JObject.Parse(jsonText);
+  string[] values = 
+        jo.Properties().Select(
+            item=>     
+             item.Value.ToString()
+         ).ToArray();
+#+END_SRC
+*** JsonSerializer 读写
+**** 数组型
+#+BEGIN_SRC C++
+string jsonArrayText1 = "[{'a':'a1','b':'b1'},{'a':'a2','b':'b2'}]";
+JArray ja = (JArray)JsonConvert.DeserializeObject(jsonArrayText1);
+string ja1a = ja[1]["a"].ToString();
+//或者
+JObject o = (JObject)ja[1];
+string oa = o["a"].ToString();
+#+END_SRC
+**** 嵌套格式
+#+BEGIN_SRC C++
+string jsonText = "{\"beijing\":{\"zone\":\"海淀\",\"zone_en\":\"haidian\"}}";
+JObject jo = (JObject)JsonConvert.DeserializeObject(jsonText);
+string zone = jo["beijing"]["zone"].ToString();
+string zone_en = jo["beijing"]["zone_en"].ToString();string jsonText = "{\"beijing\":{\"zone\":\"海淀\",\"zone_en\":\"haidian\"}}";
+JObject jo = (JObject)JsonConvert.DeserializeObject(jsonText);
+string zone = jo["beijing"]["zone"].ToString();
+string zone_en = jo["beijing"]["zone_en"].ToString();"}"
+#+END_SRC
+**** 自定义类Project
+#+BEGIN_SRC C++
+
+Project p = new Project() { Input = "stone", Output = "gold" };
+JsonSerializer serializer = new JsonSerializer();
+StringWriter sw = new StringWriter();
+serializer.Serialize(new JsonTextWriter(sw), p);
+Console.WriteLine(sw.GetStringBuilder().ToString());
+
+StringReader sr = new StringReader(@"{""Input"":""stone"", ""Output"":""gold""}");
+Project p1 = (Project)serializer.Deserialize(new JsonTextReader(sr), typeof(Project));
+Console.WriteLine(p1.Input + "=>" + p1.Output);"}")
+#+END_SRC
+
+* idea 
+** DONE mac 下截图工具 
+   CLOSED: [2015-08-27 Thu 17:01]
+   - State "DONE"       from ""           [2015-08-27 Thu 17:01]
+qq 不错 先用着
+
+
