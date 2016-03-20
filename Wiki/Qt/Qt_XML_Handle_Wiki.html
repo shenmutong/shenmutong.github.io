@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Qt_XML_Handle_Wiki</title>
-<!-- 2015-02-10 Tue 17:10 -->
+<!-- 2015-03-10 Tue 14:48 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
-<meta  name="author" content="System Administrator" />
+<meta  name="author" content="shenmutong" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
@@ -346,30 +346,29 @@ EndDocument
 </div>
 <p>
 首先来看头文件：
-#+BEG
-IN<sub>SRC</sub> C++
-class MainWindow : public QMainWindow
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #66D9EF;">class</span> <span style="color: #66D9EF;">MainWindow</span> : <span style="color: #66D9EF;">public</span> <span style="color: #66D9EF;">QMainWindow</span>
 {
-    Q<sub>OBJECT</sub>
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-</p>
+    Q_OBJECT
+<span style="color: #66D9EF;">public</span>:
+    <span style="color: #66D9EF;">explicit</span> <span style="color: #F92672; font-style: italic;">MainWindow</span>(<span style="color: #66D9EF;">QWidget</span> *<span style="color: #F92672;">parent</span> = 0);
+    ~<span style="color: #F92672; font-style: italic;">MainWindow</span>();
 
-<p>
-    bool readFile(const QString &amp;fileName);
-private:
-    void readBookindexElement();
-    void readEntryElement(QTreeWidgetItem *parent);
-    void readPageElement(QTreeWidgetItem *parent);
-    void skipUnknownElement();
-</p>
+    <span style="color: #66D9EF;">bool</span> <span style="color: #F92672; font-style: italic;">readFile</span>(<span style="color: #66D9EF;">const</span> <span style="color: #66D9EF;">QString</span> &amp;<span style="color: #F92672;">fileName</span>);
+<span style="color: #66D9EF;">private</span>:
+    <span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">readBookindexElement</span>();
+    <span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">readEntryElement</span>(<span style="color: #66D9EF;">QTreeWidgetItem</span> *<span style="color: #F92672;">parent</span>);
+    <span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">readPageElement</span>(<span style="color: #66D9EF;">QTreeWidgetItem</span> *<span style="color: #F92672;">parent</span>);
+    <span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">skipUnknownElement</span>();
 
-<p>
-    QTreeWidget *treeWidget;
-    QXmlStreamReader reader;
+    <span style="color: #66D9EF;">QTreeWidget</span> *<span style="color: #F92672;">treeWidget</span>;
+    <span style="color: #66D9EF;">QXmlStreamReader</span> <span style="color: #F92672;">reader</span>;
 };
-#+END<sub>SRC</sub>
+</pre>
+</div>
+<p>
 MainWindow显然就是我们的主窗口，其构造函数也没有什么好说的：
 </p>
 <div class="org-src-container">
@@ -584,8 +583,8 @@ w.show();
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: System Administrator</p>
-<p class="date">Created: 2015-02-10 Tue 17:10</p>
+<p class="author">Author: shenmutong</p>
+<p class="date">Created: 2015-03-10 Tue 14:48</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
