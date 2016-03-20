@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>GearVR在Unity中开发环境配置</title>
+<!-- 2016-03-20 Sun 14:41 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="U-ALW15\mut" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">GearVR在Unity中开发环境配置</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Gear VR在Uinty中开发配置</a>
+<ul>
+<li><a href="#sec-1-1">1.1. 安装androidSDK和JavaDevelopmentkit</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1. 分别安装</a></li>
+<li><a href="#sec-1-1-2">1.1.2. JDK 路径配置</a></li>
+<li><a href="#sec-1-1-3">1.1.3. AndroidSDK 路径配置</a></li>
+<li><a href="#sec-1-1-4">1.1.4. 在unity 中配置路径</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. unity 设置</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. 在Preferences中 设置</a></li>
+<li><a href="#sec-1-2-2">1.2.2. 设置目标平台</a></li>
+<li><a href="#sec-1-2-3">1.2.3. 设置VR支持和Android API</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. 程序构建</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. 获取签名文件</a></li>
+<li><a href="#sec-1-3-2">1.3.2. 获取Oculus Developer Tools</a></li>
+<li><a href="#sec-1-3-3">1.3.3. 加载 Oculus Utilities</a></li>
+<li><a href="#sec-1-3-4">1.3.4. 加入签名文件</a></li>
+<li><a href="#sec-1-3-5">1.3.5. 加入OVRCamraRig</a></li>
+<li><a href="#sec-1-3-6">1.3.6. 将手机通过USB连接到电脑</a></li>
+<li><a href="#sec-1-3-7">1.3.7. 构建并运行</a></li>
+<li><a href="#sec-1-3-8">1.3.8. 在手机上使用</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4. Tips</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1. 比较好的Samples（持续更新）</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5. 本文参考</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1. </a></li>
+<li><a href="#sec-1-5-2">1.5.2. </a></li>
+<li><a href="#sec-1-5-3">1.5.3. </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+#+Author shen.mutong 
+</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Gear VR在Uinty中开发配置</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+年初因为冲动，入手了note5加gear vr。使用之后发现效果很惊艳，于是开始尝试使用untiy开发VR应用。在开始配置开发环境时发现，unity和vr之间文档有些混乱，并且经常需要调准，和小伙伴研究了一上午，最后还是没成功，后来蛋疼的发现。。。整个过程总结如下
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 安装androidSDK和JavaDevelopmentkit</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+这一步比较简单，在官网下载androidSDK和JDE即可，在win下android的SDK默认路径比较蛋疼，在AppData下，最好是加入到系统路径中
+</p>
+</div>
+<div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> 分别安装</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>JDK
+</li>
+<li>Andorid Studio
+</li>
+<li>Android SDK
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> JDK 路径配置</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+在系统环境变量中：
+</p>
+<ul class="org-ul">
+<li>新建 JAVA<sub>HOME</sub>
+   值为JDK安装路径根目录
+</li>
+<li>加入 PATH
+;%JAVA<sub>HOME</sub>%\bin.jar;%JAVA<sub>HOME</sub>%\jre\bin
+</li>
+<li>新建 CLASSPATH
+.;%JAVA<sub>HOME</sub>%\lib\dt.jar;%JAVA<sub>HOME</sub>%\lib\tools.jar
+</li>
+</ul>
+<p>
+测试是否成功方法为CMD中输入java -version，如有信息显示，成功。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> AndroidSDK 路径配置</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>新建 SDK _HOME
+值为SDK根目录
+</li>
+<li>加入 Path
+%SDK<sub>HOME</sub>%\tools;%SDK<sub>HOME</sub>%\platform-tools;
+</li>
+</ul>
+<p>
+测试是否成功方法为： CMD中输入android   -h 。如果有信息显示，成功。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> 在unity 中配置路径</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+在unity中点击：
+Configure &gt; Project Defaults &gt; Project Structure
+在其中分别输入JDK和AndroidSDK 地址。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> unity 设置</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> 在Preferences中 设置</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+操作:
+</p>
+<ul class="org-ul">
+<li>mac  
+Unity &gt; Preferences
+</li>
+<li>win 
+Edit &gt; Preferences
+</li>
+</ul>
+<p>
+  &gt; External Tools
+在对应路径选择中加入SDK和JDK路径.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> 设置目标平台</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+操作:
+File &gt; Build Settings -&gt;
+选择Android -&gt;
+点击 Switch Platform -|
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> 设置VR支持和Android API</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+操作：
+File &gt; Build Settings &gt; Player Settings-&gt;
+选择android logo 图标 -&gt;
+点击 Other Settings -&gt;
+设置 Minimum API Level （API Level 需要在19以上） -&gt;
+选中 Virtual Reality Supported -|
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 程序构建</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> 获取签名文件</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+登陆 <a href="https://developer.oculus.com/osig/">Osig Generator</a> 通过以下方式获得DeviceID ：
+</p>
+<ul class="org-ul">
+<li>手机连接到pc
+</li>
+<li>在win中打开cmd ，在mac是那个打开shell。
+</li>
+<li>输入 adb devices
+</li>
+<li>如果之前已经配置好环境变量的情况下 ，则会获得一个16进制数字。
+</li>
+<li>将数字输入到<a href="https://developer.oculus.com/osig/">Osig Generator</a> 网站上生成
+</li>
+<li>下载文件
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> 获取Oculus Developer Tools</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+下载 <a href="https://developer.oculus.com/downloads/">Oculus Developer Tools</a>。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> 加载 Oculus Utilities</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+将下载 Oculus Utilities 文件拖入 Project Pannel 中
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> 加入签名文件</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+将签名文件放在路径：Plugins &gt; Android &gt; Assets 文件夹下。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3-5" class="outline-4">
+<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> 加入OVRCamraRig</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<p>
+在 OVR &gt; Prefabs找到 OVRCameraRig 并拖入Scene
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3-6" class="outline-4">
+<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> 将手机通过USB连接到电脑</h4>
+</div>
+<div id="outline-container-sec-1-3-7" class="outline-4">
+<h4 id="sec-1-3-7"><span class="section-number-4">1.3.7</span> 构建并运行</h4>
+</div>
+<div id="outline-container-sec-1-3-8" class="outline-4">
+<h4 id="sec-1-3-8"><span class="section-number-4">1.3.8</span> 在手机上使用</h4>
+<div class="outline-text-4" id="text-1-3-8">
+<p>
+构建和运行完成后，程序会出现在手机上，这个时候打开应用，会出现如下对话框
+[]
+！！！ 注意这个时候，将手机直接接入VR，即可看到应用程序运行效果。你妹的，我们当时弄到这的时候，没有直接插入VR，而是插入VR后再运行这个程序，结果在Oculus中一直找不到。。。。。。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Tips</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 比较好的Samples（持续更新）</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+<a href="https://www.assetstore.unity3d.com/en/#!/content/51519">VR Samples</a> 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 本文参考</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> <a href="https://cgcookie.com/2015/12/16/quick-start-guide-gear-vr-unity/">https://cgcookie.com/2015/12/16/quick-start-guide-gear-vr-unity/</a></h4>
+</div>
+<div id="outline-container-sec-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> <a href="https://developer.oculus.com/documentation/">https://developer.oculus.com/documentation/</a></h4>
+</div>
+<div id="outline-container-sec-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> <a href="http://docs.unity3d.com/Manual/VROverview.html">http://docs.unity3d.com/Manual/VROverview.html</a></h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: U-ALW15\mut</p>
+<p class="date">Created: 2016-03-20 Sun 14:41</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

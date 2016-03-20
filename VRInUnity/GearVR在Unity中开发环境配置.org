@@ -1,0 +1,83 @@
+#+Author shen.mutong 
+* Gear VR在Uinty中开发配置
+  年初因为冲动，入手了note5加gear vr。使用之后发现效果很惊艳，于是开始尝试使用untiy开发VR应用。在开始配置开发环境时发现，unity和vr之间文档有些混乱，并且经常需要调准，和小伙伴研究了一上午，最后还是没成功，后来蛋疼的发现。。。整个过程总结如下
+** 安装androidSDK和JavaDevelopmentkit
+   这一步比较简单，在官网下载androidSDK和JDE即可，在win下android的SDK默认路径比较蛋疼，在AppData下，最好是加入到系统路径中
+*** 分别安装 
+ + JDK
+ + Andorid Studio
+ + Android SDK
+*** JDK 路径配置
+ 在系统环境变量中：
+ + 新建 JAVA_HOME
+   值为JDK安装路径根目录
+ + 加入 PATH
+   ;%JAVA_HOME%\bin.jar;%JAVA_HOME%\jre\bin
+ + 新建 CLASSPATH
+   .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar
+ 测试是否成功方法为CMD中输入java -version，如有信息显示，成功。
+*** AndroidSDK 路径配置
+ + 新建 SDK _HOME
+   值为SDK根目录
+ + 加入 Path
+   %SDK_HOME%\tools;%SDK_HOME%\platform-tools;
+ 测试是否成功方法为： CMD中输入android   -h 。如果有信息显示，成功。
+*** 在unity 中配置路径
+    在unity中点击：
+    Configure > Project Defaults > Project Structure
+    在其中分别输入JDK和AndroidSDK 地址。
+** unity 设置
+*** 在Preferences中 设置
+ 操作:
+  + mac  
+    Unity > Preferences
+  + win 
+    Edit > Preferences
+  > External Tools
+在对应路径选择中加入SDK和JDK路径.
+*** 设置目标平台
+    操作:
+    File > Build Settings ->
+    选择Android ->
+    点击 Switch Platform -|
+*** 设置VR支持和Android API
+    操作：
+    File > Build Settings > Player Settings->
+    选择android logo 图标 ->
+    点击 Other Settings ->
+    设置 Minimum API Level （API Level 需要在19以上） ->
+    选中 Virtual Reality Supported -|
+** 程序构建
+*** 获取签名文件
+    登陆 [[https://developer.oculus.com/osig/][Osig Generator]] 通过以下方式获得DeviceID ：
+ + 手机连接到pc
+ + 在win中打开cmd ，在mac是那个打开shell。
+ + 输入 adb devices
+ + 如果之前已经配置好环境变量的情况下 ，则会获得一个16进制数字。
+ + 将数字输入到[[https://developer.oculus.com/osig/][Osig Generator]] 网站上生成
+ + 下载文件
+*** 获取Oculus Developer Tools 
+    下载 [[https://developer.oculus.com/downloads/][Oculus Developer Tools]]。
+*** 加载 Oculus Utilities
+    将下载 Oculus Utilities 文件拖入 Project Pannel 中
+*** 加入签名文件
+    将签名文件放在路径：Plugins > Android > Assets 文件夹下。
+*** 加入OVRCamraRig
+ 在 OVR > Prefabs找到 OVRCameraRig 并拖入Scene
+*** 将手机通过USB连接到电脑
+*** 构建并运行
+*** 在手机上使用
+ 构建和运行完成后，程序会出现在手机上，这个时候打开应用，会出现如下对话框
+ []
+ ！！！ 注意这个时候，将手机直接接入VR，即可看到应用程序运行效果。你妹的，我们当时弄到这的时候，没有直接插入VR，而是插入VR后再运行这个程序，结果在Oculus中一直找不到。。。。。。
+** Tips
+*** 比较好的Samples（持续更新）
+ [[https://www.assetstore.unity3d.com/en/#!/content/51519][VR Samples]] 
+** 本文参考
+*** https://cgcookie.com/2015/12/16/quick-start-guide-gear-vr-unity/
+*** https://developer.oculus.com/documentation/
+*** http://docs.unity3d.com/Manual/VROverview.html
+     
+     
+     
+     
