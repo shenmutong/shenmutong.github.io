@@ -2,11 +2,14 @@
 #+AUTHOR:shen.mutong
 #+EMAIL: shenmutong@gmail.com
 * Wiki
-  [[./Wiki/Wiki_Page.html][个人Wiki]]
-* BlogBlog
-  
-* VR&Unity
+** [[./Wiki/Wiki_Page.html][个人Wiki]]
+ 重要用来编写一个简单技术知识 包括 qt 和 eamcs
+** VR&Unity
+
+*** GearVR 
   [[./VRInUnity/GearVR在Unity中开发环境配置.html][GearVR在Unity中开发环境配置]]
+*** Vive 开发
+  
 
 * Note
   [[../Note/note.org][Note]]
