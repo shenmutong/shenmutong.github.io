@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-25 Wed 23:43 -->
+<!-- 2017-01-25 Wed 23:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>udacity 无人驾驶课程 开发环境配置过程</title>
@@ -233,38 +233,38 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org85d03c7">1. 介绍</a></li>
-<li><a href="#org35d549d">2. 软硬件环境</a></li>
-<li><a href="#org0dce41a">3. 配置python开发环境(pyenv 和 anaconda)</a>
+<li><a href="#orgf1a7f01">1. 介绍</a></li>
+<li><a href="#org85e87e0">2. 软硬件环境</a></li>
+<li><a href="#orgec2a4a2">3. 配置python开发环境(pyenv 和 anaconda)</a>
 <ul>
-<li><a href="#orge749f79">3.1. 安装pyenv</a></li>
-<li><a href="#orgd499ff8">3.2. 安装python(anaconda)</a></li>
-<li><a href="#org772ba4f">3.3. pyenv 使用</a></li>
+<li><a href="#org3cef5b2">3.1. 安装pyenv</a></li>
+<li><a href="#org73e8d34">3.2. 安装python(anaconda)</a></li>
+<li><a href="#orgf820652">3.3. pyenv 使用</a></li>
 </ul>
 </li>
-<li><a href="#orgad31ee9">4. 安装tensorflow</a>
+<li><a href="#org31fec9e">4. 安装tensorflow</a>
 <ul>
-<li><a href="#orgb34c507">4.1. 安装pip</a></li>
-<li><a href="#org2d70cb3">4.2. 安装CUDA</a></li>
-<li><a href="#orge59b5f4">4.3. 安装tensorflow</a></li>
+<li><a href="#org1aa4f65">4.1. 安装pip</a></li>
+<li><a href="#org16e5e34">4.2. 安装CUDA</a></li>
+<li><a href="#org1873a80">4.3. 安装tensorflow</a></li>
 </ul>
 </li>
-<li><a href="#orge21c3ea">5. jupyter notebook 远程配置</a></li>
-<li><a href="#org471e58a">6. 参考</a></li>
-<li><a href="#orge0ec249">7. 联系</a></li>
+<li><a href="#org1c7a23c">5. jupyter notebook 远程配置</a></li>
+<li><a href="#org6d2b731">6. 参考</a></li>
+<li><a href="#org5803472">7. 联系</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org85d03c7" class="outline-2">
-<h2 id="org85d03c7"><span class="section-number-2">1</span> 介绍</h2>
+<div id="outline-container-orgf1a7f01" class="outline-2">
+<h2 id="orgf1a7f01"><span class="section-number-2">1</span> 介绍</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 目前在学习优达学城的无人驾驶课程，在DeepLearning这一阶段的学习过程中，使用的了anaconda和tensorflow，在此过程中出现了一些问题。最终解决，现记录一下。
 </p>
 </div>
 </div>
-<div id="outline-container-org35d549d" class="outline-2">
-<h2 id="org35d549d"><span class="section-number-2">2</span> 软硬件环境</h2>
+<div id="outline-container-org85e87e0" class="outline-2">
+<h2 id="org85e87e0"><span class="section-number-2">2</span> 软硬件环境</h2>
 <div class="outline-text-2" id="text-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -308,15 +308,15 @@ for the JavaScript code in this tag.
 </table>
 </div>
 </div>
-<div id="outline-container-org0dce41a" class="outline-2">
-<h2 id="org0dce41a"><span class="section-number-2">3</span> 配置python开发环境(pyenv 和 anaconda)</h2>
+<div id="outline-container-orgec2a4a2" class="outline-2">
+<h2 id="orgec2a4a2"><span class="section-number-2">3</span> 配置python开发环境(pyenv 和 anaconda)</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 考虑到系统初始版本python为2.7.更改后可能使用其他软件会存在问题，如geeknote等，所以首先安装pyenv.
 </p>
 </div>
-<div id="outline-container-orge749f79" class="outline-3">
-<h3 id="orge749f79"><span class="section-number-3">3.1</span> 安装pyenv</h3>
+<div id="outline-container-org3cef5b2" class="outline-3">
+<h3 id="org3cef5b2"><span class="section-number-3">3.1</span> 安装pyenv</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 执行 ： 
@@ -339,8 +339,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd499ff8" class="outline-3">
-<h3 id="orgd499ff8"><span class="section-number-3">3.2</span> 安装python(anaconda)</h3>
+<div id="outline-container-org73e8d34" class="outline-3">
+<h3 id="org73e8d34"><span class="section-number-3">3.2</span> 安装python(anaconda)</h3>
 <div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-bash">pyenv install --list  <span style="color: #465457; font-style: italic;">#</span><span style="color: #465457; font-style: italic;">&#21015;&#20986;pyenv&#21487;&#20197;&#23433;&#35013;&#30340;python &#29256;&#26412;&#12290;</span>
@@ -367,8 +367,8 @@ pyenv在安装之前会在~/.pyenv/cache 查找是否存在安装包，若存在
 </p>
 </div>
 </div>
-<div id="outline-container-org772ba4f" class="outline-3">
-<h3 id="org772ba4f"><span class="section-number-3">3.3</span> pyenv 使用</h3>
+<div id="outline-container-orgf820652" class="outline-3">
+<h3 id="orgf820652"><span class="section-number-3">3.3</span> pyenv 使用</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-bash">pyenv rehash <span style="color: #465457; font-style: italic;"># </span><span style="color: #465457; font-style: italic;">&#26356;&#26032;&#25968;&#25454;&#24211;</span>
@@ -391,8 +391,8 @@ pyenv update <span style="color: #465457; font-style: italic;"># </span><span st
 </div>
 </div>
 </div>
-<div id="outline-container-orgad31ee9" class="outline-2">
-<h2 id="orgad31ee9"><span class="section-number-2">4</span> 安装tensorflow</h2>
+<div id="outline-container-org31fec9e" class="outline-2">
+<h2 id="org31fec9e"><span class="section-number-2">4</span> 安装tensorflow</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 注意：如果没有CUDA SDK 情况下直接安装tensorflow gpu 版本的话，在使用过程中使用import tensorflow 会出现一个比较奇怪的错误，
@@ -400,8 +400,8 @@ pyenv update <span style="color: #465457; font-style: italic;"># </span><span st
 当时脑残的用了很久来解决这个问题，后来才发现是因为没有安装CUDASDK的原因。
 </p>
 </div>
-<div id="outline-container-orgb34c507" class="outline-3">
-<h3 id="orgb34c507"><span class="section-number-3">4.1</span> 安装pip</h3>
+<div id="outline-container-org1aa4f65" class="outline-3">
+<h3 id="org1aa4f65"><span class="section-number-3">4.1</span> 安装pip</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 如果没有安装pip的话 ，使用该命令进行安装。
@@ -414,8 +414,8 @@ pyenv update <span style="color: #465457; font-style: italic;"># </span><span st
 </div>
 
 
-<div id="outline-container-org2d70cb3" class="outline-3">
-<h3 id="org2d70cb3"><span class="section-number-3">4.2</span> 安装CUDA</h3>
+<div id="outline-container-org16e5e34" class="outline-3">
+<h3 id="org16e5e34"><span class="section-number-3">4.2</span> 安装CUDA</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 一下内容直接复制于  <a href="https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux">https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux</a>
@@ -468,8 +468,8 @@ sudo apt-get install libcupti-dev
 </div>
 </div>
 </div>
-<div id="outline-container-orge59b5f4" class="outline-3">
-<h3 id="orge59b5f4"><span class="section-number-3">4.3</span> 安装tensorflow</h3>
+<div id="outline-container-org1873a80" class="outline-3">
+<h3 id="org1873a80"><span class="section-number-3">4.3</span> 安装tensorflow</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 在使用anaconda配置的 目录下，或切换当前shell到andconda 环境中。
@@ -489,16 +489,16 @@ pip3 install --upgrade $<span style="color: #F92672;">TF_BINARY_URL</span>
 </div>
 </div>
 </div>
-<div id="outline-container-orge21c3ea" class="outline-2">
-<h2 id="orge21c3ea"><span class="section-number-2">5</span> jupyter notebook 远程配置</h2>
+<div id="outline-container-org1c7a23c" class="outline-2">
+<h2 id="org1c7a23c"><span class="section-number-2">5</span> jupyter notebook 远程配置</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 有时间再写。
 </p>
 </div>
 </div>
-<div id="outline-container-org471e58a" class="outline-2">
-<h2 id="org471e58a"><span class="section-number-2">6</span> 参考</h2>
+<div id="outline-container-org6d2b731" class="outline-2">
+<h2 id="org6d2b731"><span class="section-number-2">6</span> 参考</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 <a href="https://github.com/yyuu/pyenv">https://github.com/yyuu/pyenv</a>
@@ -506,8 +506,8 @@ pip3 install --upgrade $<span style="color: #F92672;">TF_BINARY_URL</span>
 </p>
 </div>
 </div>
-<div id="outline-container-orge0ec249" class="outline-2">
-<h2 id="orge0ec249"><span class="section-number-2">7</span> 联系</h2>
+<div id="outline-container-org5803472" class="outline-2">
+<h2 id="org5803472"><span class="section-number-2">7</span> 联系</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 如果大家有问题，欢迎讨论。我的邮箱是
@@ -517,7 +517,7 @@ shenmutong@hotmail.com</p>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: shen.mutong</p>
-<p class="date">Created: 2017-01-25 Wed 23:43</p>
+<p class="date">Created: 2017-01-25 Wed 23:48</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
