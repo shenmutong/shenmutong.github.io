@@ -15,7 +15,7 @@
 ** 安装pyenv
 执行 ： 
 #+begin_src bash
-url -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 #+end_src
 在~/.zshrc 中加入如下：
 #+begin_src bash
@@ -109,7 +109,13 @@ pip3 install --upgrade $TF_BINARY_URL
 #+end_src
 搞定
 * jupyter notebook 远程配置
-有时间再写。
+可以在 ~/.jupyter/jupyter_notebook_config.py 
+中修改配置文件，设定密码。但是这样设置后可能在emacs无法使用。
+所以建立一个ssh通道时比较好的方法，如下：
+#+begin_src bash
+ssh username@address_of_remote -L127.0.1:1234:127.0.0.1:8888
+#+end_src
+这样建立通道后，在客户端就可以通过emacs 的ein 使用1234端口进行访问了。
 * 参考
 https://github.com/yyuu/pyenv
 https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux
